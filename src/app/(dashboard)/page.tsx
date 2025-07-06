@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import { Hero } from "@/src/utils/her";
+import { Hero } from "@/src/utils/contents";
 import profile from "@/src/public/profile.jpg";
 import { CgMail } from "react-icons/cg";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import ScrollVelocity from "@/animation/ScrollVelocity/ScrollVelocity";
-import RotatingText from "@/animation/RotatingText/RotatingText";
 
 const page = () => {
   return (
@@ -42,13 +41,7 @@ const page = () => {
         </div>
         <div className="w-100 flex flex-col gap-2">
           <h2 className="font-semibold text-lg text-neutral-200 flex items-center gap-1">
-            I'm{" "}
-            <RotatingText
-              texts={["Tufan Rai!", "a web developer!"]}
-              rotationInterval={2000}
-              staggerDuration={0}
-              className="bg-blue-500 rounded-lg px-2 py-1 w-42"
-            />
+            {Hero.Title}
           </h2>
           <h4 className="font-thin text-md text-neutral-300">
             {Hero.subTitle}

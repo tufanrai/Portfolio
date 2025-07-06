@@ -8,7 +8,13 @@ const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <div className="relative left-[-1000] sm:left-0 w-full py-4 flex justify-center sticky top-0">
           <HeaderComponent />
         </div>
-        <div className="h-[100%] w-full overflow-y-auto">{children}</div>
+        <div
+          className="h-[100%] w-full overflow-y-auto [&::-webkit-scrollbar]:w-[1px]
+  [&::-webkit-scrollbar-track]:bg-transparent
+  [&::-webkit-scrollbar-thumb]:w-0"
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
