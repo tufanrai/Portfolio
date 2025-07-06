@@ -2,6 +2,9 @@ import Particles from "@/animation/Particles/Particles";
 import profile from "@/src/public/profile.jpg";
 import Link from "next/link";
 import React from "react";
+import { FaGithub } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 
 const AboutMe = () => {
   return (
@@ -17,35 +20,31 @@ const AboutMe = () => {
         <div>
           <h2 className="font-semibold text-lg">About me!</h2>
           <p className="font-thin text-sm text-neutral-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            optio hic impedit. Est dolore ut temporibus similique qui nihil quas
-            aliquid mollitia nobis, autem consectetur placeat animi ullam soluta
-            iusto.
+            Hi! I'm Tufan Rai an 18 year old boy with big dreams in his eyes. He
+            who loves to code.
           </p>
+          <br />
           <p className="font-thin text-sm text-neutral-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            optio hic impedit. Est dolore ut temporibus similique qui nihil quas
-            aliquid mollitia nobis, autem consectetur placeat animi ullam soluta
-            iusto. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Obcaecati nihil saepe recusandae eaque consectetur, soluta modi,
-            eligendi aliquid explicabo aliquam possimus animi eum iure facere et
-            sint perferendis enim dicta.
+            I am from Nepal and currently I am waiting for +2 (high school)
+            result to join Bachelor in IT. Apart form coding I love playing
+            cricket and listening old ever green Nepali musics. I am a very
+            passionated boy at my works.
           </p>
           <div className="w-full mt-4">
             <ul className="flex items-center justify-start gap-1">
-              <Link href={"/"}>
-                <li className="font-thin text-xs text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100">
-                  Github
+              <Link href={"https://github.com/tufanrai"}>
+                <li className="font-thin text-lg text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100 hover:scale-110">
+                  <FaGithub />
                 </li>
               </Link>
-              <Link href={"/"}>
-                <li className="font-thin text-xs text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100">
-                  instagram
+              <Link href={"https://www.instagram.com/tufan_rai_/"}>
+                <li className="font-thin text-lg text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100 hover:scale-110">
+                  <FaInstagram />
                 </li>
               </Link>
-              <Link href={"/"}>
-                <li className="font-thin text-xs text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100">
-                  Mail
+              <Link href={"https://www.linkedin.com/in/tufan-rai-03510b299/"}>
+                <li className="font-thin text-lg text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100 hover:scale-110">
+                  <FaLinkedin />
                 </li>
               </Link>
             </ul>
