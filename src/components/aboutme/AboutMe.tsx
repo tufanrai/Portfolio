@@ -5,6 +5,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { AbtMe } from "@/src/utils/contents";
 
 const AboutMe = () => {
   return (
@@ -19,30 +20,22 @@ const AboutMe = () => {
       <div className="sm:mt-20 rounded-md text-white backdrop-blur-sm px-8 py-4 font-thin flex flex-col-reverse sm:flex-row items-start justify-center sm:flex-row sm:items-center sm:justify-center sm:gap-2 gap-4">
         <div>
           <h2 className="font-semibold text-lg">About me!</h2>
-          <p className="font-thin text-sm text-neutral-300">
-            Hi! I'm Tufan Rai an 18 year old boy with big dreams in his eyes. He
-            who loves to code.
-          </p>
+          <p className="font-thin text-sm text-neutral-300">{AbtMe.head}</p>
           <br />
-          <p className="font-thin text-sm text-neutral-300">
-            I am from Nepal and currently I am waiting for +2 (high school)
-            result to join Bachelor in IT. Apart form coding I love playing
-            cricket and listening old ever green Nepali musics. I am a very
-            passionated boy at my works.
-          </p>
+          <p className="font-thin text-sm text-neutral-300">{AbtMe.body}</p>
           <div className="w-full mt-4">
             <ul className="flex items-center justify-start gap-1">
-              <Link href={"https://github.com/tufanrai"}>
+              <Link href={AbtMe.media1}>
                 <li className="font-thin text-lg text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100 hover:scale-110">
                   <FaGithub />
                 </li>
               </Link>
-              <Link href={"https://www.instagram.com/tufan_rai_/"}>
+              <Link href={AbtMe.media2}>
                 <li className="font-thin text-lg text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100 hover:scale-110">
                   <FaInstagram />
                 </li>
               </Link>
-              <Link href={"https://www.linkedin.com/in/tufan-rai-03510b299/"}>
+              <Link href={AbtMe.media3}>
                 <li className="font-thin text-lg text-neutral-200 px-2 py-1 cursor-pointer ease duration-200 hover:text-neutral-100 hover:scale-110">
                   <FaLinkedin />
                 </li>
