@@ -6,6 +6,7 @@ import { CgMail } from "react-icons/cg";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import ScrollVelocity from "@/animation/ScrollVelocity/ScrollVelocity";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -24,18 +25,24 @@ const page = () => {
           </div>
           <div className="w-20">
             <ul className="w-full flex flex-col gap-1">
-              <li className="font-thin text-xs w-full cursor-pointer text-neutral-400 hover:text-neutral-200 ease duration-200 flex items-center justify-start gap-1">
-                <FaGithub />
-                GitHub
-              </li>
-              <li className="font-thin text-xs w-full cursor-pointer text-neutral-400 hover:text-neutral-200 ease duration-200 flex items-center justify-start gap-1">
-                <FaInstagram />
-                instagram
-              </li>
-              <li className="font-thin text-xs w-full cursor-pointer text-neutral-400 hover:text-neutral-200 ease duration-200 flex items-center justify-start gap-1">
-                <CgMail />
-                G-mail
-              </li>
+              <Link href="https://github.com/tufanrai">
+                <li className="font-thin text-xs w-full cursor-pointer text-neutral-400 hover:text-neutral-200 ease duration-200 flex items-center justify-start gap-1">
+                  <FaGithub />
+                  GitHub
+                </li>
+              </Link>
+              <Link href="https://www.instagram.com/tufan_rai_/">
+                <li className="font-thin text-xs w-full cursor-pointer text-neutral-400 hover:text-neutral-200 ease duration-200 flex items-center justify-start gap-1">
+                  <FaInstagram />
+                  instagram
+                </li>
+              </Link>
+              <Link href="https://mail.google.com/mail/u/0/#inbox">
+                <li className="font-thin text-xs w-full cursor-pointer text-neutral-400 hover:text-neutral-200 ease duration-200 flex items-center justify-start gap-1">
+                  <CgMail />
+                  G-mail
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
