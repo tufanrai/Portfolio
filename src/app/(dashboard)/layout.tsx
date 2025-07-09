@@ -1,11 +1,9 @@
 "use client";
 import HeaderComponent from "@/src/components/header/HeaderComponent";
-import React, { ReactNode, useState, createContext } from "react";
+import React, { ReactNode, useState } from "react";
 import { IoMoonOutline } from "react-icons/io5";
 import { RxSun } from "react-icons/rx";
-
-// @ts-ignore
-export const DayContext = createContext();
+import { DayContext } from "@/src/utils/Providor/Context";
 
 const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
   const [Day, setDay] = useState(false);

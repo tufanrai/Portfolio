@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { AbtMe } from "@/src/utils/contents";
-import { DayContext } from "@/src/app/(dashboard)/layout";
+import { DayContext } from "@/src/utils/Providor/Context";
 
 function AboutMe() {
   const Day = useContext(DayContext);

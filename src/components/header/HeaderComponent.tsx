@@ -5,7 +5,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { LuTableProperties } from "react-icons/lu";
 import { GiBlackBook } from "react-icons/gi";
 import Link from "next/link";
-import { DayContext } from "../../app/(dashboard)/layout";
+import { DayContext } from "@/src/utils/Providor/Context";
 
 const HeaderComponent: FC = () => {
   const Day = useContext(DayContext);

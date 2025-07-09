@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import ScrollVelocity from "@/animation/ScrollVelocity/ScrollVelocity";
 import Link from "next/link";
-import { DayContext } from "@/src/app/(dashboard)/layout";
+import { DayContext } from "@/src/utils/Providor/Context";
 
 const HeroPage = () => {
   const Day = useContext(DayContext);
