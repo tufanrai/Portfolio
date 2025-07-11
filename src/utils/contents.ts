@@ -65,4 +65,10 @@ export const Blogs: IBlog[] = [
     paragraph:
       "I had interest in coding since the day i learned QBASIC in grade 7. Then when in gradi 8 i got introduced to HTML my interest grew even more deeper and deeper..",
   },
+  {
+    Title: "How I started my coding journey 4",
+    sub_title: "About my journey in coding as a MERN stack developer.",
+    paragraph:
+      "I had interest in coding since the day i learned QBASIC in grade 7. Then when in gradi 8 i got introduced to HTML my interest grew even more deeper and deeper..",
+  },
 ];
