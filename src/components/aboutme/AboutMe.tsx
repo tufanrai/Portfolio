@@ -33,9 +33,9 @@ function AboutMe() {
       <div
         className={`sm:mt-20 rounded-md backdrop-blur-sm ${
           Day && Day ? "text-black" : "text-white"
-        } px-8 py-4 font-thin flex flex-col-reverse sm:flex-row items-start justify-center sm:flex-row sm:items-center sm:justify-center sm:gap-2 gap-4`}
+        } px-8 py-4 font-thin flex flex-col-reverse sm:flex-row items-start justify-center sm:flex-row sm:items-center sm:justify-center sm:gap-8 gap-4`}
       >
-        <div>
+        <div className=" w-full px-8">
           <h2 className="font-semibold text-lg">About me!</h2>
           <p className="font-thin text-sm">{AbtMe.head}</p>
           <br />
@@ -78,7 +78,7 @@ function AboutMe() {
             </ul>
           </div>
         </div>
-        <div className="w-45 max-h-45 w-full h-screen rounded-md overflow-hidden">
+        <div className="w-45 max-w-45 max-h-45 h-screen rounded-md overflow-hidden">
           <img
             src={profile.src}
             className=" object-center scale-110 hover:scale-120 ease duration-300"

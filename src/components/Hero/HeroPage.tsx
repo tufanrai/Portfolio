@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa";
 import ScrollVelocity from "@/animation/ScrollVelocity/ScrollVelocity";
 import Link from "next/link";
 import { DayContext } from "@/src/utils/Providor/Context";
+import TufanRai from "@/src/public/TufanRai.png";
 
 const HeroPage = () => {
   const Day = useContext(DayContext);

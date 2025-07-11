@@ -1,5 +1,9 @@
 "use client";
 import React from "react";
+import { Blogs } from "@/src/utils/contents";
+import { IBlog } from "@/src/utils/contents";
+
+console.log(Blogs);
 
 const Works = () => {
   return (
@@ -7,11 +11,15 @@ const Works = () => {
       <div className="px-8 py-4">
         <h1 className="font-bold text-lg">Blog</h1>
       </div>
-      <div className="px-8 py-4">
-        <h1 className="font-thin text-xl italic">Coming Soon!</h1>
-        <h3 className="font-thin text-sm">
-          This page is in under construction...
-        </h3>
+      <div className="px-8 py-4 w-full">
+        {Blogs.map((blog: IBlog) => (
+          <div className="flex flex-col border-b w-full py-4 px-2 gap-1 cursor-pointer">
+            <h1>{blog.Title}</h1>
+            <h2 className="font-light text-sm text-neutral-500">
+              {blog.sub_title}
+            </h2>
+          </div>
+        ))}
       </div>
     </div>
   );
