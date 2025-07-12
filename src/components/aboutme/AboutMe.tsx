@@ -35,7 +35,7 @@ function AboutMe() {
           Day && Day ? "text-black" : "text-white"
         } px-8 py-4 font-thin flex flex-col-reverse sm:flex-row items-start justify-center sm:flex-row sm:items-center sm:justify-center sm:gap-8 gap-4`}
       >
-        <div className=" w-full px-8">
+        <div className=" w-full">
           <h2 className="font-semibold text-lg">About me!</h2>
           <p className="font-thin text-sm">{AbtMe.head}</p>
           <br />
