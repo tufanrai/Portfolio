@@ -1,6 +1,7 @@
 import React from "react";
 import { Work } from "@/src/utils/contents";
 import Link from "next/link";
+import { span } from "framer-motion/client";
 
 const Works = () => {
   return (
@@ -24,6 +25,16 @@ const Works = () => {
             <div className="py-4 px-2 flex flex-col items-start justify-center gap-1">
               <h1 className="text-lg">{work.title}</h1>
               <p className="text-sm text-neutral-400">{work.description}</p>
+              <div className="w-full flex flex-wrap items-center justify-start gap-1">
+                {work.languages.map((language, index) => (
+                  <span
+                    key={index}
+                    className="font-light text-neutral-400 text-sm px-5 py-1 bg-gray-800 rounded-md"
+                  >
+                    {language}
+                  </span>
+                ))}
+              </div>
               <Link
                 href={work.link}
                 className="font-light text-sm text-neutral-500 underline ease duration-300 hover:text-neutral-300"
