@@ -29,7 +29,7 @@ const HeroPage = () => {
             <ul className="w-full flex flex-col gap-1">
               <Link href={Hero.media1}>
                 <li
-                  className={`font-thin text-xs w-full cursor-pointer ${
+                  className={`font-light text-sm w-full cursor-pointer ${
                     Day && Day
                       ? "text-black/55 hover:text-black"
                       : "text-neutral-400 hover:text-neutral-200"
@@ -41,7 +41,7 @@ const HeroPage = () => {
               </Link>
               <Link href={Hero.media2}>
                 <li
-                  className={`font-thin text-xs w-full cursor-pointer ${
+                  className={`font-light text-sm w-full cursor-pointer ${
                     Day && Day
                       ? "text-black/55 hover:text-black"
                       : "text-neutral-400 hover:text-neutral-200"
