@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import { Work } from "@/src/utils/contents";
 import Link from "next/link";
-import { span } from "framer-motion/client";
+import { DayContext } from "@/src/utils/Providor/Context";
 
 const Works = () => {
+  const Day = useContext(DayContext);
   return (
     <div className="flex flex-col items-start justify-start gap-5">
       <div className="px-8 py-4">
@@ -25,7 +27,7 @@ const Works = () => {
             <div className="py-4 px-2 flex flex-col items-start justify-center gap-1">
               <h1 className="text-lg">{work.title}</h1>
               <p className="text-sm text-neutral-400">{work.description}</p>
-              <div className="w-full flex flex-wrap items-center justify-start gap-1">
+              <div className="w-full flex flex-wrap items-center justify-start gap-1 py-2">
                 {work.languages.map((language, index) => (
                   <span
                     key={index}
@@ -37,7 +39,11 @@ const Works = () => {
               </div>
               <Link
                 href={work.link}
-                className="font-light text-sm text-neutral-500 underline ease duration-300 hover:text-neutral-300"
+                className={`font-light text-sm ${
+                  Day && Day
+                    ? "text-black/45 hover:text-black"
+                    : "text-white/45 hover:text-white"
+                } sm:text-neutral-500 underline ease duration-300 sm:hover:text-neutral-300`}
               >
                 {work.link}
               </Link>
