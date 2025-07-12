@@ -49,7 +49,7 @@ export const Hero: IHero = {
 
 // About me page informations.
 export const AbtMe: IMe = {
-  head: "Hi, I'm Tufan Rai.  Tufan the storm behind the design",
+  head: "Hi, I'm Tufan Rai.  Tufan - the storm behind the design",
   body: "I'm a software engineer currently pursuing my MSc in Computer Science (yes, still working on it—no pressure, right?). I specialize in frontend development but have recently started exploring backend development too—because why not learn how the whole system works? It's not always smooth sailing, but I'm here for the challenge (and maybe a few cups of coffee along the way).",
   foot: "When I'm not coding, you might find me signing up for a random marathon, jumping around, or daydreaming about running instead.",
   media1: "https://github.com/tufanrai",
