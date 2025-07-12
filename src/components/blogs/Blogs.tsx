@@ -28,7 +28,12 @@ const Works = () => {
             key={index}
             className="flex flex-col border-b w-full py-4 px-2 gap-1 cursor-pointer"
           >
-            <h1>{blog.Title}</h1>
+            <div className="w-full flex items-center justify-between">
+              <h1>{blog.Title}</h1>
+              <span className="text-xs font-light text-nwutral-500">
+                {blog.Date}
+              </span>
+            </div>
             <h2 className="font-light text-sm text-neutral-500">
               {blog.sub_title}
             </h2>
