@@ -37,9 +37,9 @@ function AboutMe() {
       >
         <div className=" w-full">
           <h2 className="font-semibold text-lg">About me!</h2>
-          <p className="font-thin text-sm">{AbtMe.head}</p>
+          <p className="font-light text-sm">{AbtMe.head}</p>
           <br />
-          <p className="font-thin text-sm">{AbtMe.body}</p>
+          <p className="font-light text-sm">{AbtMe.body}</p>
           <div className="w-full mt-4">
             <ul className="flex items-center justify-start gap-1">
               <Link href={AbtMe.media1}>
