@@ -11,7 +11,7 @@ const Works = () => {
       <div className="px-8 py-4 w-full h-screen flex items-start justify-start gap-2 overflow-hidden flex-wrap">
         {Work.map((work, index) => (
           <div
-            className="sm:w-54 w-45 rounded-lg border overflow-hidden"
+            className="sm:w-54 rounded-lg border overflow-hidden"
             key={index}
           >
             <div className="w-full h-[50%] bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
