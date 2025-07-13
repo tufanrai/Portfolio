@@ -49,9 +49,9 @@ export const Hero: IHero = {
 
 // About me page informations.
 export const AbtMe: IMe = {
-  head: "Hi, I'm Tufan Rai.  Tufan - the storm behind the design",
-  body: "I'm a software engineer currently pursuing my MSc in Computer Science (yes, still working on it—no pressure, right?). I specialize in frontend development but have recently started exploring backend development too—because why not learn how the whole system works? It's not always smooth sailing, but I'm here for the challenge (and maybe a few cups of coffee along the way).",
-  foot: "When I'm not coding, you might find me signing up for a random marathon, jumping around, or daydreaming about running instead.",
+  head: "Hi, I'm Tufan Rai, the storm behind the code.",
+  body: "I’m a software engineer currently planning pursuing a BIT degree at Global College of Technology. I specialize in both frontend and backend development, crafting seamless web experiences with Next.js for the frontend and Node.js/Express.js for the backend. For data storage, I rely on MongoDB to keep everything organized and efficient.",
+  foot: "Life isn’t always smooth, and neither is coding, but my passion for web development keeps me motivated to push boundaries and excel in my field. When I’m not debugging or building projects, you’ll often find me coding late into the night, fueled by a cup of coffee and the soothing tunes of classic Nepali songs.",
   media1: "https://github.com/tufanrai",
   media2: "https://www.instagram.com/tufan_rai_/",
   media3: "https://www.linkedin.com/in/tufan-rai-03510b299/",

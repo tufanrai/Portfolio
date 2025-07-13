@@ -40,6 +40,8 @@ function AboutMe() {
           <p className="font-light text-sm">{AbtMe.head}</p>
           <br />
           <p className="font-light text-sm">{AbtMe.body}</p>
+          <br />
+          <p className="font-light text-sm">{AbtMe.foot}</p>
           <div className="w-full mt-4">
             <ul className="flex items-center justify-start gap-1">
               <Link href={AbtMe.media1}>
