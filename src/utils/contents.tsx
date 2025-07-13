@@ -38,11 +38,10 @@ interface IWork {
 
 // Hero or the landing page details.
 export const Hero: IHero = {
-  Title: "I'm Tufan Rai",
-  subTitle:
-    "I'm a MERN Stack web developer with good experience with express.js, node.js, mongoDB and next.js.",
+  Title: "Tufan Rai",
+  subTitle: "The storm behind the code.",
   paragraph:
-    " I love turning other's imagination to reality with code. I love to help people start their business and leave their business's presence on the internet.",
+    "I'm a MERN Stack web developer with good experience with express.js, node.js, mongoDB and next.js. I love turning other's imagination to reality with code. I love to help people start their business and leave their business's presence on the internet.",
   media1: "https://github.com/tufanrai",
   media2: "https://www.instagram.com/tufan_rai_/",
 };
