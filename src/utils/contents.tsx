@@ -43,7 +43,7 @@ export const Hero: IHero = {
   Title: "Tufan Rai",
   subTitle: "The storm behind the code.",
   paragraph:
-    "I'm a MERN Stack web developer with good experience with express.js, node.js, mongoDB and next.js. I love turning other's imagination to reality with code. I love to help people start their business and leave their business's presence on the internet.",
+    "I'm a MERN Stack web developer specializing in building robust and scalable web applications. With strong experience in Express.js, Node.js, MongoDB, and Next.js, I transform innovative concepts into functional, high performance digital solutions. I am passionate about empowering individuals and businesses to establish and grow their online presence, turning their visions into tangible realities through code.",
   media1: "https://github.com/tufanrai",
   media2: "https://www.instagram.com/tufan_rai_/",
 };
@@ -51,8 +51,8 @@ export const Hero: IHero = {
 // About me page informations.
 export const AbtMe: IMe = {
   head: "Hi, I'm Tufan Rai, the storm behind the code.",
-  body: "I’m a software engineer currently planning pursuing a BIT degree at Global College of Technology. I specialize in both frontend and backend development, crafting seamless web experiences with Next.js for the frontend and Node.js/Express.js for the backend. For data storage, I rely on MongoDB to keep everything organized and efficient.",
-  foot: "Life isn’t always smooth, and neither is coding, but my passion for web development keeps me motivated to push boundaries and excel in my field. When I’m not debugging or building projects, you’ll often find me coding late into the night, fueled by a cup of coffee and the soothing tunes of classic Nepali songs.",
+  body: "As a software engineer currently pursuing a BIT degree at Global College of Technology, I specialize in crafting seamless web experiences. I possess a strong understanding of web development architecture, allowing me to build robust and scalable applications. My expertise spans both frontend and backend development, leveraging Next.js for dynamic user interfaces and Node.js/Express.js for robust server-side logic. MongoDB is my go to for efficient data management.",
+  foot: "When it comes to UI/UX, I believe in a user-centered approach. My process typically involves designing wireframes to map out the user journey before translating those concepts into functional, engaging code. All my work is diligently stored and managed on GitHub.",
   media1: "https://github.com/tufanrai",
   media2: "https://www.instagram.com/tufan_rai_/",
   media3: "https://www.linkedin.com/in/tufan-rai-03510b299/",
