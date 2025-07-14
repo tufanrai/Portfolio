@@ -28,7 +28,7 @@ const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
     >
       <DayContext.Provider value={Day}>
         <div className="md:max-w-[800px] w-full flex flex-col relative">
-          <div className="relative left-[-1000] sm:left-0 w-full py-4 flex justify-center items-center gap-5 sticky top-0">
+          <div className="relative left-[-1000] sm:left-0 w-full py-4 flex justify-center items-center gap-5 sticky top-0 z-50">
             <HeaderComponent />
             <div
               onClick={ChangeDay}
