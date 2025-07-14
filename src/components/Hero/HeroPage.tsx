@@ -110,10 +110,10 @@ const HeroPage = () => {
       <hr className="w-full h-[1px] border-neutral-400" />
       <div className="w-full overflow-hidden py-8">
         <h2 className="font-light text-lg mb-8">Recent Works</h2>
-        <div className="w-full flex items-start justify-start gap-1">
+        <div className="w-full flex items-center justify-start sm:items-start sm:justify-start gap-1 flex-wrap">
           {Work.slice(0, 3).map((work, index) => (
             <div
-              className="w-62 rounded-lg border overflow-hidden flex flex-col items-center justify-start sm:flex-row sm:items-center sm:justify-start flex-wrap"
+              className="w-62 rounded-lg border overflow-hidden flex flex-col items-center justify-start"
               key={index}
             >
               <div className="w-full h-[50%] bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
