@@ -22,6 +22,8 @@ const HeroPage = () => {
     router.replace(`/blogs/${id.toString()}`);
   };
 
+  console.log(Work, Work.length);
+
   const Day = useContext(DayContext);
   return (
     <div className="w-full flex flex-col items-start justify-center gap-2 px-8">
@@ -108,10 +110,10 @@ const HeroPage = () => {
       <hr className="w-full h-[1px] border-neutral-400" />
       <div className="w-full overflow-hidden py-8">
         <h2 className="font-light text-lg mb-8">Recent Works</h2>
-        <div className="w-full">
-          {Work.slice(Work.length - 3).map((work, index) => (
+        <div className="w-full flex items-start justify-start gap-1">
+          {Work.slice(0, 3).map((work, index) => (
             <div
-              className="w-58 rounded-lg border overflow-hidden flex items-center justify-start flex-wrap"
+              className="w-62 rounded-lg border overflow-hidden flex flex-col items-center justify-start sm:flex-row sm:items-center sm:justify-start flex-wrap"
               key={index}
             >
               <div className="w-full h-[50%] bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
@@ -154,7 +156,7 @@ const HeroPage = () => {
       <div className="w-full overflow-hidden py-8">
         <h2 className="font-light text-lg mb-8">Recent Blogs</h2>
         <div className="w-full">
-          {Blogs.slice(Blogs.length - 3).map((blog, index) => (
+          {Blogs.slice(0, 3).map((blog, index) => (
             <div
               onClick={() => directUser(index)}
               key={index}
