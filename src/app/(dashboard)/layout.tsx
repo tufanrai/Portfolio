@@ -1,23 +1,25 @@
 "use client";
 import HeaderComponent from "@/src/components/header/HeaderComponent";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { IoMoonOutline } from "react-icons/io5";
 import { RxSun } from "react-icons/rx";
 import { DayContext } from "@/src/utils/Providor/Context";
 
-// const isDarkMode = (): boolean => {
-//   return (
-//     window.matchMedia &&
-//     window.matchMedia("(prefers-color-scheme: dark)").matches
-//   );
-// };
+const isDarkMode = (): boolean => {
+  return (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: light)").matches
+  );
+};
 
 const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
-  const [Day, setDay] = useState(false);
+  const [Day, setDay] = useState(isDarkMode());
   const ChangeDay = () => {
+    Day && Day
+      ? window.matchMedia("(prefers-color-scheme: light")
+      : window.matchMedia("(prefers-color-scheme: dark)");
     setDay(!Day);
   };
-
   return (
     <div
       className={`w-full h-screen flex justify-center ${
