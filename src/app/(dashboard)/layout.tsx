@@ -45,7 +45,7 @@ const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
           <div
             className="h-[100%] w-full overflow-y-auto [&::-webkit-scrollbar]:w-[1px]
   [&::-webkit-scrollbar-track]:bg-transparent
-  [&::-webkit-scrollbar-thumb]:w-0"
+  [&::-webkit-scrollbar-thumb]:w-0 pb-10"
           >
             {children}
           </div>
