@@ -113,7 +113,7 @@ const HeroPage = () => {
         <div className="w-full flex items-center justify-start sm:items-start sm:justify-start gap-1 flex-wrap">
           {Work.slice(0, 3).map((work, index) => (
             <div
-              className="w-62 rounded-lg border overflow-hidden flex flex-col items-center justify-start"
+              className="sm:w-62 w-full rounded-lg border overflow-hidden flex flex-col items-center justify-start"
               key={index}
             >
               <div className="w-full h-[50%] bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
