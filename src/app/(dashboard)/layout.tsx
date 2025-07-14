@@ -1,51 +1,39 @@
 "use client";
 import HeaderComponent from "@/src/components/header/HeaderComponent";
-import React, { ReactNode, useState, useEffect } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { IoMoonOutline } from "react-icons/io5";
 import { RxSun } from "react-icons/rx";
 import { DayContext } from "@/src/utils/Providor/Context";
 
 const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
-  // Initialize with dark mode by default
-  const [Day, setDay] = useState(false); // false = dark mode
+  const [Day, setDay] = useState(false); // Initialize with false
 
   useEffect(() => {
-    // Check for saved preference in localStorage
-    const savedPreference = localStorage.getItem("colorScheme");
-
-    if (savedPreference) {
-      setDay(savedPreference === "light");
-    } else {
-      // Default to dark mode if no preference is saved
-      setDay(false);
-      // Optionally set the prefers-color-scheme media query
-      document.documentElement.classList.add("dark");
-    }
+    const isDarkMode = (): boolean => {
+      return (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: light)").matches
+      );
+    };
+    setDay(isDarkMode());
   }, []);
 
+  useEffect(() => {
+    Day && Day
+      ? window.matchMedia("(prefers-color-scheme: dark")
+      : window.matchMedia("(prefers-color-scheme: light");
+  }, [Day]);
+
   const ChangeDay = () => {
-    const newMode = !Day;
-    setDay(newMode);
-
-    // Save preference to localStorage
-    localStorage.setItem("colorScheme", newMode ? "light" : "dark");
-
-    // Update class on html element
-    if (newMode) {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    } else {
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-    }
+    setDay(!Day);
   };
 
   return (
     <div
       className={`w-full h-screen flex justify-center ${
-        Day
-          ? "bg-white text-black light-mode"
-          : "bg-linear-15 from-black/25 to-indigo-700/65 dark-mode"
+        Day && Day
+          ? "bg-white text-black"
+          : "bg-linear-15 from-black/25 to-indigo-700/65"
       }`}
     >
       <DayContext.Provider value={Day}>
@@ -56,7 +44,12 @@ const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
               onClick={ChangeDay}
               className="w-8 h-8 rounded-full px-2 py-1 bg-black/45 cursor-pointer flex items-center justify-center"
             >
-              {Day ? <IoMoonOutline className="text-white" /> : <RxSun />}
+              {" "}
+              {Day && Day ? (
+                <IoMoonOutline className="text-white" />
+              ) : (
+                <RxSun />
+              )}
             </div>
           </div>
           <div
