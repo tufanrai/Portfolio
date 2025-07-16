@@ -17,7 +17,9 @@ const BlogPage = () => {
       </Link>
       <h1 className="font-semibold text-lg">{obj?.Title}</h1>
       <h3 className="font-light text-sm">{obj?.sub_title}</h3>
-      <p className="font-light text-sm mb-8">{obj?.paragraph}</p>
+      <p className="font-light text-sm mb-8">
+        {obj?.paragraph.replace(/BREAK/g, "\n")}
+      </p>
     </div>
   );
 };
