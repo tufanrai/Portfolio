@@ -112,42 +112,31 @@ const HeroPage = () => {
         <h2 className="font-light text-lg mb-8">Recent Works</h2>
         <div className="w-full flex items-center justify-start sm:items-start sm:justify-start gap-1 flex-wrap">
           {Work.slice(0, 3).map((work, index) => (
-            <div
-              className="sm:w-62 w-full rounded-lg border overflow-hidden flex flex-col items-center justify-start"
-              key={index}
-            >
-              <div className="w-full h-[50%] bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
-                <img
-                  src={`${work.img}`}
-                  className="object-cover w-full object-center"
-                  alt=""
-                />
-              </div>
-              <div className="py-4 px-2 flex flex-col items-start justify-center gap-1">
-                <h1 className="text-lg">{work.title}</h1>
-                <p className="text-sm text-neutral-400">{work.description}</p>
-                <div className="w-full flex flex-wrap items-center justify-start gap-1 py-2">
-                  {work.languages.map((language, index) => (
-                    <span
-                      key={index}
-                      className="font-light text-neutral-400 text-sm px-5 py-1 bg-gray-800 rounded-md"
-                    >
-                      {language}
-                    </span>
-                  ))}
+            <Link key={index} href={work.link}>
+              <div className="sm:w-65 sm:h-100 rounded-lg border overflow-hidden">
+                <div className="w-full max-h-40 h-screen bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
+                  <img
+                    src={`${work.img}`}
+                    className="object-cover w-full object-center"
+                    alt=""
+                  />
                 </div>
-                <Link
-                  href={work.link}
-                  className={`font-light text-sm ${
-                    Day && Day
-                      ? "text-black/45 hover:text-black"
-                      : "text-white/45 hover:text-white"
-                  } sm:text-neutral-500 underline ease duration-300 sm:hover:text-neutral-300`}
-                >
-                  {work.link}
-                </Link>
+                <div className="py-4 px-2 flex flex-col items-start justify-center gap-1">
+                  <h1 className="text-lg">{work.title}</h1>
+                  <p className="text-sm text-neutral-400">{work.description}</p>
+                  <div className="w-full flex flex-wrap items-center justify-start gap-1 py-2">
+                    {work.languages.map((language, index) => (
+                      <span
+                        key={index}
+                        className="font-light text-neutral-400 text-sm px-5 py-1 bg-gray-800 rounded-md"
+                      >
+                        {language}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
