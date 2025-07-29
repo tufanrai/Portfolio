@@ -31,7 +31,7 @@ function AboutMe() {
         )}
       </div>
       <div
-        className={`sm:mt-20 rounded-md backdrop-blur-sm ${
+        className={`sm:mt-20 rounded-md backdrop-blur-sm shadow-white ${
           Day && Day ? "text-black" : "text-white"
         } px-8 py-4 font-thin flex flex-col-reverse sm:flex-row items-start justify-center sm:flex-row sm:items-center sm:justify-center sm:gap-8 gap-4`}
       >

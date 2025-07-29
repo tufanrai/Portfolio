@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { Blogs } from "@/src/utils/contents";
-import { IBlog } from "@/src/utils/contents";
+import { Blogs } from "@/src/utils/BlogContent";
+import { IBlog } from "@/src/utils/BlogContent";
 import { useRouter } from "next/navigation";
 
 console.log(Blogs);

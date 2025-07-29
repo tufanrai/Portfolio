@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import { Work } from "@/src/utils/contents";
+import { Work } from "@/src/utils/WorkContent";
 import Link from "next/link";
 import { DayContext } from "@/src/utils/Providor/Context";
 

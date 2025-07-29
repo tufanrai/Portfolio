@@ -7,8 +7,8 @@ import { FaGithub } from "react-icons/fa";
 import ScrollVelocity from "@/animation/ScrollVelocity/ScrollVelocity";
 import Link from "next/link";
 import { DayContext } from "@/src/utils/Providor/Context";
-import { Work } from "@/src/utils/contents";
-import { Blogs } from "@/src/utils/contents";
+import { Work } from "@/src/utils/WorkContent";
+import { Blogs } from "@/src/utils/BlogContent";
 import { useRouter } from "next/navigation";
 
 const HeroPage = () => {
