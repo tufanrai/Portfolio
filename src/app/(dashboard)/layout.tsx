@@ -33,7 +33,7 @@ const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
       className={`w-full h-screen flex justify-center ${
         Day && Day
           ? "bg-white text-black"
-          : "bg-linear-15 from-black/25 to-indigo-700/65"
+          : "bg-linear-15 from-black to-indigo-700"
       }`}
     >
       <DayContext.Provider value={Day}>
@@ -48,7 +48,7 @@ const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
               {Day && Day ? (
                 <IoMoonOutline className="text-white" />
               ) : (
-                <RxSun />
+                <RxSun className="text-white" />
               )}
             </div>
           </div>

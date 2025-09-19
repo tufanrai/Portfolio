@@ -1,14 +1,15 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { Blogs } from "@/src/utils/BlogContent";
 import { IBlog } from "@/src/utils/BlogContent";
 import { useRouter } from "next/navigation";
+import { DayContext } from "@/src/utils/Providor/Context";
 
 console.log(Blogs);
 
 const Works = () => {
   const router = useRouter();
-
+  const Day = useContext(DayContext);
   const directUser = (id: number) => {
     if (typeof window !== "undefined") {
       localStorage.setItem("id", id.toString());
@@ -19,7 +20,13 @@ const Works = () => {
   return (
     <div className="flex flex-col items-start justify-start gap-5">
       <div className="px-8 py-4">
-        <h1 className="font-bold text-lg">Blog</h1>
+        <h1
+          className={`font-bold text-lg ${
+            Day && Day ? "text-black" : "text-white"
+          }`}
+        >
+          Blog
+        </h1>
       </div>
       <div className="px-8 py-4 w-full">
         {Blogs.map((blog: IBlog, index) => (
@@ -29,8 +36,10 @@ const Works = () => {
             className="flex flex-col border-b w-full py-4 px-2 gap-1 cursor-pointer"
           >
             <div className="w-full flex items-center justify-between">
-              <h1>{blog.Title}</h1>
-              <span className="text-xs font-light text-nwutral-500">
+              <h1 className={`${Day && Day ? "text-black" : "text-white"}`}>
+                {blog.Title}
+              </h1>
+              <span className="text-xs font-light text-neutral-500">
                 {blog.Date}
               </span>
             </div>

@@ -97,7 +97,13 @@ const HeroPage = () => {
       {/* Skills and tools  */}
       <hr className="w-full h-[1px] border-neutral-400" />
       <div className="w-full overflow-hidden py-8">
-        <h2 className="font-light text-lg mb-8">Skills/Tools</h2>
+        <h2
+          className={`${
+            Day && Day ? "text-black" : "text-white"
+          } font-light text-lg mb-8`}
+        >
+          Skills/Tools
+        </h2>
         <ScrollVelocity
           texts={["Node.js Express.js MongoDB", "Next.js GitHub VScode"]}
           velocity={20}
@@ -109,11 +115,23 @@ const HeroPage = () => {
       {/* recent works */}
       <hr className="w-full h-[1px] border-neutral-400" />
       <div className="w-full overflow-hidden py-8">
-        <h2 className="font-light text-lg mb-8">Recent Works</h2>
+        <h2
+          className={`${
+            Day && Day ? "text-black" : "text-white"
+          } font-light text-lg mb-8`}
+        >
+          Recent Works
+        </h2>
         <div className="w-full flex items-center justify-start sm:items-start sm:justify-start gap-1 flex-wrap">
           {Work.slice(0, 3).map((work, index) => (
             <Link key={index} href={work.link}>
-              <div className="sm:w-65 sm:h-100 rounded-lg border overflow-hidden">
+              <div
+                className={`sm:w-65 sm:h-100 rounded-lg border overflow-hidden shadow-md/30 ${
+                  Day && Day
+                    ? "border-black shadow-black"
+                    : "border-white shadow-white"
+                }`}
+              >
                 <div className="w-full max-h-40 h-screen bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
                   <img
                     src={`${work.img}`}
@@ -122,8 +140,16 @@ const HeroPage = () => {
                   />
                 </div>
                 <div className="py-4 px-2 flex flex-col items-start justify-center gap-1">
-                  <h1 className="text-lg">{work.title}</h1>
-                  <p className="text-sm text-neutral-400">{work.description}</p>
+                  <h1
+                    className={`text-lg ${
+                      Day && Day ? "text-black" : "text-white"
+                    }`}
+                  >
+                    {work.title}
+                  </h1>
+                  <p className={`text-sm text-neutral-400`}>
+                    {work.description}
+                  </p>
                   <div className="w-full flex flex-wrap items-center justify-start gap-1 py-2">
                     {work.languages.map((language, index) => (
                       <span
@@ -143,7 +169,13 @@ const HeroPage = () => {
       {/* recent blogs */}
       <hr className="w-full h-[1px] border-neutral-400" />
       <div className="w-full overflow-hidden py-8">
-        <h2 className="font-light text-lg mb-8">Recent Blogs</h2>
+        <h2
+          className={`font-light text-lg mb-8 ${
+            Day && Day ? "text-black" : "text-white"
+          }`}
+        >
+          Recent Blogs
+        </h2>
         <div className="w-full">
           {Blogs.slice(0, 3).map((blog, index) => (
             <div
@@ -152,8 +184,14 @@ const HeroPage = () => {
               className="flex flex-col border-b w-full py-4 px-2 gap-1 cursor-pointer"
             >
               <div className="w-full flex items-center justify-between">
-                <h1>{blog.Title}</h1>
-                <span className="text-xs font-light text-nwutral-500">
+                <h1 className={`${Day && Day ? "text-black" : "text-white"}`}>
+                  {blog.Title}
+                </h1>
+                <span
+                  className={`text-xs font-light  ${
+                    Day && Day ? "text-black" : "text-neutral-500"
+                  }`}
+                >
                   {blog.Date}
                 </span>
               </div>
