@@ -168,40 +168,7 @@ const HeroPage = () => {
       </div>
       {/* recent blogs */}
       <hr className="w-full h-[1px] border-neutral-400" />
-      <div className="w-full overflow-hidden py-8">
-        <h2
-          className={`font-light text-lg mb-8 ${
-            Day && Day ? "text-black" : "text-white"
-          }`}
-        >
-          Recent Blogs
-        </h2>
-        <div className="w-full">
-          {Blogs.slice(0, 3).map((blog, index) => (
-            <div
-              onClick={() => directUser(index)}
-              key={index}
-              className="flex flex-col border-b w-full py-4 px-2 gap-1 cursor-pointer"
-            >
-              <div className="w-full flex items-center justify-between">
-                <h1 className={`${Day && Day ? "text-black" : "text-white"}`}>
-                  {blog.Title}
-                </h1>
-                <span
-                  className={`text-xs font-light  ${
-                    Day && Day ? "text-black" : "text-neutral-500"
-                  }`}
-                >
-                  {blog.Date}
-                </span>
-              </div>
-              <h2 className="font-light text-sm text-neutral-500">
-                {blog.sub_title}
-              </h2>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* components of blog */}
     </div>
   );
 };
