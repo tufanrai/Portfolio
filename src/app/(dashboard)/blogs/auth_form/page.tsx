@@ -8,7 +8,7 @@ const page = () => {
  
   return (
     <div className="w-full h-screen overflow-x-hidden flex justify-center">
-      <div className="max-w-[1280px] w-full h-screen px-6 py-4">
+      <div className="max-w-[1280px] w-full h-screen px-6 py-8">
         <Header
           headerType="prime"
           content="Login/Registration form - MERN Stack"
@@ -40,7 +40,7 @@ const page = () => {
             "Create a repository for the project and inside the repository create another two different folders - client for the frontend and server for the backend.",
           ]}
         />
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter
             children={`
 mkdir login_register_mern
@@ -57,7 +57,7 @@ mkdir client server
             "On the server folder initialise node.js app and typescript",
           ]}
         />
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter
             children={`
 npm init -y
@@ -69,7 +69,7 @@ npx tsc -init
         </div>
         <br />
         <ListCard contents={["install package and dev-dependencies"]} />
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter
             language="bash"
             children={`
@@ -80,7 +80,7 @@ npm i -D @types/express @types/bcryptjs @types/jsonwebtoken ts-node-dev
         </div>
         <br />
         <ListCard contents={["update package.json and tsconfig.json files"]} />
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter
             language="json"
             children={`
@@ -98,7 +98,7 @@ npm i -D @types/express @types/bcryptjs @types/jsonwebtoken ts-node-dev
         </div>
         <br />
         <ListCard contents={["Create .env file on the roote directory ( server ) to store sensetive and important urls."]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
               <SyntaxHighlighter 
                 language="bash"
                 children={`
@@ -107,7 +107,7 @@ touch .env
         </div>
         <br/>
         <ListCard contents={["Store all the sensetive urls on .env file"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter
             language="bash"
             children={`
@@ -121,7 +121,7 @@ JWT_EXPIRY_DATE = '30d'
         </div>
         <br />
         <ListCard contents={["Inside server folder create a src folder and inside it create some essential folders along with a server file."]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
               <SyntaxHighlighter language="bash" children={`
 mkdir src && cd src
 touch server.ts
@@ -132,7 +132,7 @@ mkdir config controller model router utils
         <Header headerType="sec" content="Server setup"/>
         <br />
         <ListCard contents={["Initialise app, connect the routes and database. ( src/server.ts )"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import 'dotenv/config';
 import express from 'express';
@@ -169,7 +169,7 @@ app.listen(port, () => console.log('server started on port: 5001'));
         <Header headerType="sec" content="Database configuration"/>
         <br />
         <ListCard contents={["connect your server with the database. ( src/config/dbConfig.ts )"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import mongoose from 'mongoose';
 
@@ -183,7 +183,7 @@ export const dbConfig = (uri: string) => {
         </div>
         <br />
         <ListCard contents={["Create a user model. ( model/user.mode.ts )"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
             <SyntaxHighlighter language="typescript" children={`
 import { Schema, model } from 'mongoose';
 
@@ -210,7 +210,7 @@ const UserSchema = new Schema({
         <Header headerType="sec" content="Helping components/Utils"/>
         <br />
         <ListCard contents={["Create helping components like asyncHandler, errorHandler, token generator and password hasher."]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="bash" children={`
 cd utils 
 touch asyncHandler.ts errorHandler.ts jwt.utils.ts bcryptjs.utils.ts
@@ -218,7 +218,7 @@ touch asyncHandler.ts errorHandler.ts jwt.utils.ts bcryptjs.utils.ts
         </div>
         <br />
         <ListCard contents={["Inside asyncHandler.ts file create async handler function"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 
@@ -234,7 +234,7 @@ export const asyncHandler = (fun: Handler) : RequestHandler => {
         </div>
         <br />
         <ListCard contents={["Inside asyncHandler.ts file create async handler function"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
             <SyntaxHighlighter language="typescript" children={`
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 
@@ -250,7 +250,7 @@ export const asyncHandler = (fun: Handler) : RequestHandler => {
         </div>
         <br />
         <ListCard contents={["Create custom error handler file inside the file errorHandler.ts"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 class errorHandler extends Error {
 	statusCode : number;
@@ -271,7 +271,7 @@ export default errorHandler;
         </div>
         <br />
         <ListCard contents={["Create a token generator and verifiyer on the jwt.utils.ts file"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import jwt from 'jsonwebtoken';
 
@@ -293,7 +293,7 @@ export const verifyToken = (token: string) => {
         <ParagraphCard paragraph={"“jsonwebtoken” is one of the package that is used to generate as it’s name says ‘JSON web token’. This token comes in hand when ever you login to a site, close the site and visit it again after few hours. The generated token when you first loged in will automatically logs in for you such that the second visit to site is direct to your dashaboard."} />
         <br />
         <ListCard contents={["create a password hasher and verifyier in bcryptjs.utils.ts file"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import bcryptjs from 'bcryptjs';
 
@@ -315,7 +315,7 @@ export const verifyPassword = ( password: string, hash: string ) => {
         <Header headerType="sec" content="Controllers"/>
         <br />
         <ListCard contents={["create a file auth.controller.ts in the controller folder"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import { Request, Response } from 'express';
 import { asyncHandler } from '@/utils/asyncHandler';
@@ -393,7 +393,7 @@ export const loginUser = asyncHandler( async (req: Request, res: Response) => {
         <Header headerType="sec" content="Router"/>
         <br />
         <ListCard contents={["Create auth.router.ts file to rout your controllers."]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
             <SyntaxHighlighter language="typescript" children={`
 import { Router } from 'express';
 import { newRegister, loginUser } from '@/controller/auth.controllers';
@@ -410,7 +410,7 @@ export default authRouter;
         <Header headerType="sec" content="Frontend work"/>
         <br />
         <ListCard contents={["Go to client folder and initilise new next app"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="bash" children={`
 cd client && npx create-next-app@latest .
 // After this it will ask you questions answer them as per your requirenent if writing the code then just press enter and continue
@@ -418,14 +418,14 @@ cd client && npx create-next-app@latest .
         </div>
         <br />
         <ListCard contents={["install essential packages"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="bash" children={`
 npm i react-hot-toast react-icons @tanstack/query react-hook-form @hookform/resolver yup axios
           `}/>
         </div>
         <br />
         <ListCard contents={["Create a folder named components inside app folder and again inside component folder create 3 folders (schema, interface and cards)"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
             <SyntaxHighlighter language="bash" children={`
 cd app && mkdir components
 cd components && mkdir cards schema interface
@@ -433,7 +433,7 @@ cd components && mkdir cards schema interface
         </div>
         <br />
         <ListCard contents={["create two files inside cards ( LoginCard.tsx & RegisterCard.tsx)"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="bash" children={`
 cd cards && touch LoginCard.tsx RegisterCard.tsx
           `}/>
@@ -441,7 +441,7 @@ cd cards && touch LoginCard.tsx RegisterCard.tsx
         <br />
         <Header headerType="sec" content="Login card component"/>
         <br />
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 "use client";
 import Link from "next/link";
@@ -551,7 +551,7 @@ export default LoginCard;
         <br />
         <Header headerType="sec" content="Register card component"/>
         <br />
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 "use client";
 import React from "react";
@@ -677,7 +677,7 @@ export default RegisterCard;
         <Header headerType="sec" content="Schema"/>
         <br />
         <ListCard contents={["Insied schema folder create a file named form.schema.ts, here we will define the schema of login and register form."]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 imoprt * as yup from 'yup';
 
@@ -700,7 +700,7 @@ export const registerSchema = yup.object({
         <Header headerType="sec" content="Interface"/>
         <br />
         <ListCard contents={["Inside the interface folder create a file form.interface.ts  where we will define the interface of the login and registration form."]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 // login form interface 
 export interface ILogin {
@@ -720,7 +720,7 @@ export interface IRegister {
         <Header headerType="sec" content="Assemble them all"/>
         <br />
         <ParagraphCard paragraph="Finally after creating all of those components, go to app folder then create a folder named auth and again inside the auth folder create two folder login and register. "/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="bash" children={`
 cd app && mkdir auth
 cd auth && mkdir login register
@@ -745,7 +745,7 @@ const page = () => {
         </div>
         <br />
         <ListCard contents={["../register/page.tsx"]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import React from 'react';
 import RegisterCard from '@/components/cards/RegisterCard';
@@ -764,7 +764,7 @@ const page = () => {
         <Header headerType="sec" content="Backend Connection"/>
         <br />
         <ParagraphCard paragraph="Lastly create an api folder inside app folder and create a file named form.api.ts"/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="bash" children={`
 cd ../
 mkdir api 
@@ -774,7 +774,7 @@ open form.api.ts
         </div>
         <br />
         <ListCard contents={["Create axios instance and connect frontend with backend."]}/>
-        <div className="w-full px-8">
+        <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import axios from 'axios';
 import { ILogin, IResigster } from '@/components/interface/form.interface';
