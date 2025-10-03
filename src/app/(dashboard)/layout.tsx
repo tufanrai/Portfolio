@@ -32,7 +32,7 @@ const layout = ({ children }: Readonly<{ children: ReactNode }>) => {
     <div
       className={`w-full h-screen flex justify-center ${
         Day && Day
-          ? "bg-white text-black"
+          ? "bg-stone-200 text-black"
           : "bg-linear-15 from-black to-indigo-700"
       }`}
     >

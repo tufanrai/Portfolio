@@ -8,8 +8,8 @@ import ScrollVelocity from "@/animation/ScrollVelocity/ScrollVelocity";
 import Link from "next/link";
 import { DayContext } from "@/src/utils/Providor/Context";
 import { Work } from "@/src/utils/WorkContent";
-import { Blogs } from "@/src/utils/BlogContent";
 import { useRouter } from "next/navigation";
+import BlogListCard from "../Cards/BlogListCard";
 
 const HeroPage = () => {
   const router = useRouter();
@@ -168,7 +168,9 @@ const HeroPage = () => {
       </div>
       {/* recent blogs */}
       <hr className="w-full h-[1px] border-neutral-400" />
-      {/* components of blog */}
+        <div className=" w-full flex flex-wrap overflow-x-hidden overflow-y-auto gap-4">
+      <BlogListCard link="blogs/auth_form" date="2025-10-03" title="Simple login/registration form using MERN Stack" description="This blog teaches you how to build a very super simple login and registration form using MERN Stack web application development."/>
+    </div>
     </div>
   );
 };
