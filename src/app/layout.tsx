@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portfolio | Tufan Rai",
   description:
-    "MERN stack web developer, website building, e-commerce website, web developers near me, web developers, full stack web developers, full stack web developer portfolio, website, mern stack",
+    "MERN stack web developer, website building, e-commerce website, web developers near me, web developers, full stack web developers, full stack web developer portfolio, website, mern stack, full stack developer from Nepal",
 };
 
 export default function RootLayout({

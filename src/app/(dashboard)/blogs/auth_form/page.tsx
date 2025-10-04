@@ -409,6 +409,12 @@ export default authRouter;
         <br />
         <Header headerType="sec" content="Frontend work"/>
         <br />
+        <ParagraphCard paragraph="Here is a small asmr tutorial on how to build login and registration page. From here you will be able to build the UI of the form and the only extra thing you will have to work on is to add the api connection part."/>
+        <br />
+        <div className="w-full flex items-center justify-center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/5nI3cSiRSwQ?si=djbuE1JQjFhbUm-j" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        </div>
+        <br />
         <ListCard contents={["Go to client folder and initilise new next app"]}/>
         <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="bash" children={`
