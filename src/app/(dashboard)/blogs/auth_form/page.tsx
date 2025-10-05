@@ -33,6 +33,12 @@ const page = () => {
           ]}
         />
         <br />
+        <ParagraphCard paragraph="Here is a small asmr tutorial on how to build login and registration page. From here you will be able to build the UI of the form and the only extra thing you will have to work on is to add the api connection part."/>
+        <br />
+        <div className="w-full flex items-center justify-center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/5nI3cSiRSwQ?si=djbuE1JQjFhbUm-j" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        </div>
+        <br />
         <Header headerType="sec" content="Setting up the Project" />
         <br />
         <ListCard
@@ -137,12 +143,11 @@ mkdir config controller model router utils
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import authRouter from '@/router/authRouter';
-import { dbConfig } from '@/config/dbconfig';
+import authRouter from './router/authRouter';
+import { dbConfig } from './config/dbconfig';
 
 // import ting the root url's from .env file
-conimport { DayContext } from '../../../../utils/Providor/Context';
-st PORT = porcess.env.PORT ?? 8000;
+const PORT = porcess.env.PORT ?? 8000;
 const uri = porcess.env.DB_URI ?? '';
 
 // initialising app  
@@ -176,7 +181,7 @@ import mongoose from 'mongoose';
 // function that connects server with the database. 
 export const dbConfig = (uri: string) => {
 	mongoose.connect(uri)
-	.then(() => console.log('server connected to database successfuly')
+	.then(() => console.log('server connected to database successfuly'))
 	.catch(err => console.log(err));
 };
           `}/>
@@ -222,7 +227,7 @@ touch asyncHandler.ts errorHandler.ts jwt.utils.ts bcryptjs.utils.ts
           <SyntaxHighlighter language="typescript" children={`
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 
-type Handler = async (req: Request, res: Response, next: NextFunciton) => Promise<any>;
+type Handler = (req: Request, res: Response, next: NextFunciton) => Promise<any>;
 
 // async handler function
 export const asyncHandler = (fun: Handler) : RequestHandler => {
@@ -231,22 +236,6 @@ export const asyncHandler = (fun: Handler) : RequestHandler => {
 	};
 };
           `}/>
-        </div>
-        <br />
-        <ListCard contents={["Inside asyncHandler.ts file create async handler function"]}/>
-        <div className="w-full px-2 md:px-8">
-            <SyntaxHighlighter language="typescript" children={`
-import { Request, Response, NextFunction, RequestHandler } from 'express';
-
-type Handler = async (req: Request, res: Response, next: NextFunciton) => Promise<any>;
-
-// async handler function
-export const asyncHandler = (fun: Handler) : RequestHandler => {
-	return (req: Request, res: Response, next: NextFunction) => {
-		Promise.resolve(fun(req,res,next)).catch(err => next(err));
-	};
-};
-            `}/>
         </div>
         <br />
         <ListCard contents={["Create custom error handler file inside the file errorHandler.ts"]}/>
@@ -259,10 +248,10 @@ class errorHandler extends Error {
 	
 	constructor (message: string, statusCode: number) {
 		super(message)
-		(this.statusCode = statusCode);
-		(this.status = statusCode >= 400 && statusCode < 500? 'fail' : 'error');
-		(this.success = false);
-		Error.capturetimestamp(this, errorHandler);
+		this.statusCode = statusCode
+    this.status = statusCode >= 400 && statusCode < 500? 'fail' : 'error'
+    this.success = false 
+    Error.captureStackTrace(this, errorHandler);
 	};
 };
 
@@ -286,7 +275,7 @@ export const generateToken = (data: IPayload) => {
 
 // verify token 
 export const verifyToken = (token: string) => {
-	return jwt.verify(token) as jwt.JwtPayload;
+	return jwt.verify(token, jwtSecretKey) as jwt.JwtPayload;
 };
           `}/>
         </div>
@@ -318,22 +307,22 @@ export const verifyPassword = ( password: string, hash: string ) => {
         <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter language="typescript" children={`
 import { Request, Response } from 'express';
-import { asyncHandler } from '@/utils/asyncHandler';
-import errorHandler from '@/utils/errorHandler';
-import User from '@/model/UserSchema';
-import { hashPassword, verifyPassword } from '@/utils/bcryptjs.utils';
-import { generateToken } from '@/utils/jwt.utils';
+import { asyncHandler } from '../utils/asyncHandler';
+import errorHandler from '../utils/errorHandler';
+import User from '../model/UserSchema';
+import { hashPassword, verifyPassword } from '../utils/bcryptjs.utils';
+import { generateToken } from '../utils/jwt.utils';
 
 
 // register new user 
 export const newRegister = asyncHandler( async (req: Request, res: Response) => {
-	const data = req.body; // we receive the datas from body of request
+	const {password, ...data} = req.body; // we receive the datas from body of request
 	
 	if(!data) { // returns error if all the required datas are not filled
 		throw new errorHandler('please enter all the required details', 406);
 	};
 	
-	const hashedPassword = await hashPassword(data.password); // the function returns hashed password
+	const hashedPassword = await hashPassword(password); // the function returns hashed password
 	
 	if(!hashedPassowrd) { // If any problem occures while returning hashed password throws an error
 		throw new errorHandler('something went wrong, please try again', 500);
@@ -361,6 +350,10 @@ export const loginUser = asyncHandler( async (req: Request, res: Response) => {
 	};
 	
 	const user = await User.findOne({email}); // finds user from the database using typed email
+
+  if(!user) {
+        throw new errorHandler('user does not exists', 404);
+  };
 	
 	const verifiedPassword = verifyPassword(password, user.password); // checks for the password and returns boolean value
 	
@@ -396,7 +389,7 @@ export const loginUser = asyncHandler( async (req: Request, res: Response) => {
         <div className="w-full px-2 md:px-8">
             <SyntaxHighlighter language="typescript" children={`
 import { Router } from 'express';
-import { newRegister, loginUser } from '@/controller/auth.controllers';
+import { newRegister, loginUser } from '../controller/auth.controllers';
 
 const authRouter = Router();
 
@@ -408,12 +401,6 @@ export default authRouter;
         </div>
         <br />
         <Header headerType="sec" content="Frontend work"/>
-        <br />
-        <ParagraphCard paragraph="Here is a small asmr tutorial on how to build login and registration page. From here you will be able to build the UI of the form and the only extra thing you will have to work on is to add the api connection part."/>
-        <br />
-        <div className="w-full flex items-center justify-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/5nI3cSiRSwQ?si=djbuE1JQjFhbUm-j" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-        </div>
         <br />
         <ListCard contents={["Go to client folder and initilise new next app"]}/>
         <div className="w-full px-2 md:px-8">

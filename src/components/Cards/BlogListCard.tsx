@@ -20,7 +20,7 @@ const BlogListCard = ({date, title, description, link}: IProps) => {
                 <span className={`font-medium text-xs md:text-sm ${Day && Day? 'text-black' : 'text-neutral-400'}`}>{date}</span>
             </div>
             <div className='w-full'>
-                <p className={`font-medium text-sm md:text-md text-start max-w-100 h-10 overflow-hidden ${Day && Day? 'text-black' : 'text-neutral-400'}`}>{description}</p>
+                <p className={`none md:block font-medium text-sm md:text-md text-start max-w-100 h-10 overflow-hidden ${Day && Day? 'text-black' : 'text-neutral-400'}`}>{description}</p>
             </div>
     </Link>
         </div>
