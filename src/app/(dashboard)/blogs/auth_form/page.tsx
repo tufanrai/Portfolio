@@ -1,6 +1,7 @@
 import Header from "@/src/components/Cards/HeaderCard";
 import ListCard from "@/src/components/Cards/ListCard";
 import ParagraphCard from "@/src/components/Cards/ParagraphCard";
+import Link from "next/link";
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
@@ -802,6 +803,7 @@ export const RegisterUser = async (data: IRegister) => {
         <br />
         <Header headerType="sec" content="Conclusion"/>
         <ParagraphCard paragraph="With this you have successfully completed building production ready login/registration form and you also might have understood how all the social medias and other applications keep record of your accounts. Thank you for giving your valuable time to read my blog. After this if still you have some doubts regarding this project, your have certain part that you are still confused about then please feel free to contact me or mail me i’ll be explaining it clearly to you guys. "/>
+        <Link className="w-full font-thin text-md md:text-lg text-blue-500 underline" href={'https://login-registration-form-client-nu.vercel.app'}> click here to check the demo!</Link>
       </div>
     </div>
   );

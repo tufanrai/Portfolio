@@ -1,5 +1,6 @@
 import calculator from "@/src/public/CalculatorSS.png";
 import todo from "@/src/public/to-do-list.png";
+import userAuth from '@/src/public/Login_Registration_Form_HomePage.png';
 
 // Works
 interface IWork {
@@ -19,6 +20,14 @@ export const Work: IWork[] = [
       "A super simple calculator to perform mathematical opertions or play with numbers.",
     languages: ["HTML", "CSS", "JavaScript"],
     link: "https://calculat0r21.netlify.app",
+  },
+  {
+    img: `${userAuth.src}`,
+    title: "Login/Registration Form",
+    description:
+    "A very simple user authentication project that explains working mechanism of user authentication.",
+    languages: ["Next.js", "Tailwindcss", "Express.js", "Node.js", "MongoDB"],
+    link: "https://login-registration-form-client-nu.vercel.app"
   },
   {
     img: `${todo.src}`,
