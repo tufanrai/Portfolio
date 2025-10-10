@@ -122,39 +122,40 @@ const HeroPage = () => {
         >
           Recent Works
         </h2>
-        <div className="w-full flex items-center justify-start sm:items-start sm:justify-start gap-1 flex-wrap">
+        <div className="w-full flex flex-wrap items-start justify-center sm:justify-start gap-1">
           {Work.slice(0, 3).map((work, index) => (
             <Link key={index} href={work.link}>
               <div
-                className={`sm:w-65 sm:h-100 rounded-lg border overflow-hidden shadow-md/30 ${
+                className={`w-58 h-90 rounded-lg overflow-hidden ${
                   Day && Day
-                    ? "border-black shadow-black"
-                    : "border-white shadow-white"
+                    ? "border-black bg-neutral-100 shadow-md/30 shadow-stone-800"
+                    : "border-white bg-stone-400/50 shadow-md/30 shadow-stone-100"
                 }`}
               >
-                <div className="w-full max-h-40 h-screen bg-white overflow-hidden cursor-pointer hover:scale-110 ease duration-300">
+                <div className="w-full bg-blue-500 overflow-hidden">
                   <img
                     src={`${work.img}`}
-                    className="object-cover w-full object-center"
+                    className="object-cover"
+                    width={"100%"}
                     alt=""
                   />
                 </div>
-                <div className="py-4 px-2 flex flex-col items-start justify-center gap-1">
+                <div className="py-4 px-2 flex flex-col items-start justify-center">
                   <h1
-                    className={`text-lg ${
-                      Day && Day ? "text-black" : "text-white"
+                    className={`font-medium text-lg ${
+                      Day && Day ? "text-stone-800" : "text-neutral-100"
                     }`}
                   >
                     {work.title}
                   </h1>
-                  <p className={`text-sm text-neutral-400`}>
+                  <p className="font-normal text-sm text-neutral-400">
                     {work.description}
                   </p>
                   <div className="w-full flex flex-wrap items-center justify-start gap-1 py-2">
                     {work.languages.map((language, index) => (
                       <span
                         key={index}
-                        className="font-light text-neutral-400 text-sm px-5 py-1 bg-gray-800 rounded-md"
+                        className="font-light text-neutral-400 text-xs px-5 py-1 bg-gray-800 rounded-md"
                       >
                         {language}
                       </span>
@@ -168,9 +169,20 @@ const HeroPage = () => {
       </div>
       {/* recent blogs */}
       <hr className="w-full h-[1px] border-neutral-400" />
-        <div className=" w-full flex flex-wrap overflow-x-hidden overflow-y-auto gap-4">
-      <BlogListCard link="blogs/auth_form" date="2025-10-03" title="Simple login/registration form using MERN Stack" description="This blog teaches you how to build a very super simple login and registration form using MERN Stack web application development."/>
-    </div>
+      <div className=" w-full flex flex-wrap overflow-x-hidden overflow-y-auto gap-4">
+        <BlogListCard
+          link="blogs/auth_form"
+          date="2025-10-03"
+          title="Simple login/registration form using MERN Stack"
+          description="This blog teaches you how to build a very super simple login and registration form using MERN Stack web application development."
+        />
+        <BlogListCard
+          link="blogs/note-taking-app"
+          date="2025-10-13"
+          title="Simple Note Taking App - MERN"
+          description="This blog walks you through the entire process of building a simple note taking app."
+        />
+      </div>
     </div>
   );
 };

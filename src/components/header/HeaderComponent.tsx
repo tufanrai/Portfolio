@@ -6,6 +6,7 @@ import { LuTableProperties } from "react-icons/lu";
 import { GiBlackBook } from "react-icons/gi";
 import Link from "next/link";
 import { DayContext } from "@/src/utils/Providor/Context";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
 
 const HeaderComponent: FC = () => {
   const Day = useContext(DayContext);
@@ -61,6 +62,17 @@ const HeaderComponent: FC = () => {
             }`}
           >
             <GiBlackBook /> blogs
+          </li>
+        </Link>
+        <Link href={"/contactme"}>
+          <li
+            className={`cursor-pointer font-thin text-sm px-2 py-1 flex items-center justify-center gap-1 rounded-full ${
+              Day && Day ? "hover:bg-black/15" : "hover:bg-black/white5"
+            } hover:backdrop-blur-lg ease duration-200 ${
+              Day && Day ? "text-black" : "text-white"
+            }`}
+          >
+            <MdOutlineConnectWithoutContact /> contact
           </li>
         </Link>
       </ul>

@@ -1,6 +1,6 @@
-import calculator from "@/src/public/CalculatorSS.png";
-import todo from "@/src/public/to-do-list.png";
-import userAuth from '@/src/public/Login_Registration_Form_HomePage.png';
+import calculator from "@/src/public/Calculator.png";
+import todo from "@/src/public/To Do List App.png";
+import userAuth from "@/src/public/LoginRegistrationForm.png";
 
 // Works
 interface IWork {
@@ -25,16 +25,18 @@ export const Work: IWork[] = [
     img: `${userAuth.src}`,
     title: "Login/Registration Form",
     description:
-    "A very simple user authentication project that explains working mechanism of user authentication.",
+      "A very simple user authentication project that explains working mechanism of user authentication.",
     languages: ["Next.js", "Tailwindcss", "Express.js", "Node.js", "MongoDB"],
-    link: "https://login-registration-form-client-nu.vercel.app"
+    link: "https://login-registration-form-client-nu.vercel.app",
   },
   {
     img: `${todo.src}`,
     title: "To-do-list",
     description:
       "Todoos is a super simple to do list making app that helps you record your all your to do works easily.",
-    languages: ["NEXT.js", "Tailwindcss", "Express.js", "Node.js", "MongoDB"],
+    languages: ["Next.js", "Tailwindcss", "Express.js", "Node.js", "MongoDB"],
     link: "https://to-do-client-hazel.vercel.app",
   },
 ];
+
+const appPassword = "allb wyys evmb omcv";

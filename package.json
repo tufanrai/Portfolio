@@ -9,18 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@tanstack/react-query": "^5.90.2",
     "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.23.0",
     "next": "^15.5.3",
+    "nodemailer": "^7.0.6",
     "ogl": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.64.0",
     "react-icons": "^5.5.0",
-    "react-syntax-highlighter": "^15.6.6"
+    "react-syntax-highlighter": "^15.6.6",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@tanstack/eslint-plugin-query": "^5.91.0",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
