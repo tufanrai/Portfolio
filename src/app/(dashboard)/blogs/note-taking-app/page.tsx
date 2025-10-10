@@ -2350,7 +2350,62 @@ const axiosInstance = axios.create({
 export default axiosInstance;
 `}
         />
-        <ParagraphCard paragraph="With this our dashboard is ready now we need to work on the login and registration form to log and register user’s to get access to the dashboard and let them take and make notes."/>
+        <ParagraphCard paragraph="With this our dashboard is ready now we need to work on the login and registration form to log and register user’s to get access to the dashboard and let them take and make notes." />
+        <br />
+        <br />
+        <Header headerType="sec" content="auth" />
+        <br />
+        <Header headerType="tri" content="login" />
+        <br />
+        <ListCard contents={["Create auth/login/page.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import LoginCard from "@/components/cards/LoginCard";
+import React from "react";
+
+const page = () => {
+  return (
+    <div className="w-full h-screen flex items-center justify-center bg-neutral-200">
+      <LoginCard />
+    </div>
+  );
+};
+
+export default page;
+`}
+        />
+        <br />
+        <br />
+        <Header headerType="tri" content="register" />
+        <br />
+        <ListCard contents={["Create auth/register/page.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import RegisterCard from "@/components/cards/RegisterCard";
+import React from "react";
+
+const page = () => {
+  return (
+    <div className="w-full h-screen flex items-center justify-center bg-neutral-200">
+      <RegisterCard />
+    </div>
+  );
+};
+
+export default page;
+`}
+        />
+        <br /><br />
+        <Header headerType="sec" content="Build"/>
+        <br />
+        <ParagraphCard paragraph="Once we successfully create all the above files and folders successfully we will build it before hosting it live. So run the following command on both repository (client & server)."/>
+        <SyntaxHighlighter language="bash" children={`npm run build`}/>
+        <ParagraphCard paragraph="Basically what it does is that it will convert all the codes that we wrote in typescript language into plain JavaScript language."/>
+        <br />
+        <br />
+        <Header headerType="sec" content="Conclusion"/>
+        <br />
+        <ParagraphCard paragraph="After building the code the super simple note taking app is ready for hosting. Also with this a full mern stack web application project comes to an end. Hope you learned something good and made yourself productive. For the explanation you can make a visit to my youtube channel where I have explained you how it works in detail."/>
       </div>
     </div>
   );
