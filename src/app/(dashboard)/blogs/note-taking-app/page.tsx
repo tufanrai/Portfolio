@@ -2033,10 +2033,15 @@ export const NoteSchema = yup.object({
 `}
         />
         <br />
-        <ParagraphCard paragraph="With this we successfully have completed creating all the essential components. Now we will use them in the respective end-points on the actual pages. So for that we will move inside the app directory and create some endpoints ( folders ).  and also you can delete pre-built page.tsx file as the contents inside the “(dashboard)” folder will be displayed by default when we load the site or visit the site."/>
-        <SyntaxHighlighter language="bash" children="cd ../app && mkdir (dashboard) api auth"/>
-        <ParagraphCard paragraph="Once you do all mentioned above let’s add some toasters and query providers in the layout.tsx file."/>
-        <SyntaxHighlighter language="typescript" children={`import type { Metadata } from "next";
+        <ParagraphCard paragraph="With this we successfully have completed creating all the essential components. Now we will use them in the respective end-points on the actual pages. So for that we will move inside the app directory and create some endpoints ( folders ).  and also you can delete pre-built page.tsx file as the contents inside the “(dashboard)” folder will be displayed by default when we load the site or visit the site." />
+        <SyntaxHighlighter
+          language="bash"
+          children="cd ../app && mkdir (dashboard) api auth"
+        />
+        <ParagraphCard paragraph="Once you do all mentioned above let’s add some toasters and query providers in the layout.tsx file." />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/components/provider/QueryProvider";
@@ -2073,14 +2078,279 @@ export default function RootLayout({
     </html>
   );
 }
-`}/>
+`}
+        />
         <br />
         <br />
-        <Header headerType="sec" content="(dashboard)"/>
+        <Header headerType="sec" content="(dashboard)" />
         <br />
-        <ParagraphCard paragraph="Inside (dashboard) folder before adding the codes first let’s create some required end-points ( folders ) for this project."/>
-        <SyntaxHighlighter language="bash" children={`cd "(dashboard)" && mkdir -p [id] newnote setting/{profile}`}/>
-        <ListCard contents={["Create (dashboard)/layout.tsx"]}/>
+        <ParagraphCard paragraph="Inside (dashboard) folder before adding the codes first let’s create some required end-points ( folders ) for this project." />
+        <SyntaxHighlighter
+          language="bash"
+          children={`cd "(dashboard)" && mkdir -p [id] newnote setting/{profile}`}
+        />
+        <ListCard contents={["Create (dashboard)/layout.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`"use client";
+import React from "react";
+import NavigationComp from "@/components/Navigation/NavigationComp";
+import { HigherOrderComp } from "@/components/Navigation/HigherOrderComp";
+
+const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+  return (
+    <div className="w-full h-screen flex justify-center bg-linear-to-r from-neutral-300 to-stone-300 overflow-hidden">
+      <NavigationComp>{children}</NavigationComp>
+    </div>
+  );
+};
+
+export default HigherOrderComp(layout);
+`}
+        />
+        <ListCard contents={["Create app/(dashboard)/page.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`"use client";
+import AllNotes from "@/components/dashboard/AllNotes";
+
+export default function Home() {
+  return (
+    <div className="w-full h-screen relative p-8 overflow-y-auto">
+      <h1 className="font-bold text-xl italic text-stone-800">Notes</h1>
+      <AllNotes />
+    </div>
+  );
+}
+`}
+        />
+        <br />
+        <br />
+        <Header headerType="sec" content="[id]" />
+        <br />
+        <ListCard contents={["Create (dashboard)/[id]/page.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`"use client";
+import SpecificNote from "@/components/cards/SpecificNote";
+import React from "react";
+
+const page = () => {
+  return (
+    <div className="w-full h-screen flex justify-center">
+      <SpecificNote />
+    </div>
+  );
+};
+
+export default page;
+`}
+        />
+        <br />
+        <br />
+        <Header headerType="sec" content="newnote" />
+        <br />
+        <ListCard contents={["Create (dashboard)/newnote/page.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import NewNote from "@/components/cards/NewNote";
+import React from "react";
+
+const page = () => {
+  return (
+    <div className="w-full h-screen flex items-center justify-center overflow-hidden">
+      <NewNote />
+    </div>
+  );
+};
+
+export default page;
+`}
+        />
+        <br />
+        <br />
+        <Header headerType="sec" content="setting" />
+        <br />
+        <ListCard contents={["Create (dashboard)/setting/page.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import SettingCard from "@/components/cards/SettingCard";
+import React from "react";
+
+const page = () => {
+  return (
+    <div className="w-full h-screen overflow-hidden md:flex md:justify-center md:items-center">
+      <SettingCard />
+    </div>
+  );
+};
+
+export default page;
+`}
+        />
+        <ListCard contents={["Create setting/profile/page.tsx"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import ProfileCard from "@/components/cards/ProfileCard";
+import React from "react";
+
+const page = () => {
+  return (
+    <div className="w-full h-screen overflow-hidden flex items-center justify-center">
+      <ProfileCard />
+    </div>
+  );
+};
+
+export default page;
+`}
+        />
+        <br />
+        <br />
+        <Header headerType="sec" content="api" />
+        <br />
+        <ListCard contents={["Create app/api"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import axiosInstance from "./axiosInstance";
+import { ILog, IRegister, INote } from "@/components/interface/interfaces";
+import Cookies from "js-cookie";
+
+const userId = Cookies.get("userId");
+
+interface IProps {
+  endPoint: string;
+  title?: string;
+  note?: string;
+}
+
+interface IUser {
+  endPoint: string;
+  full_name?: string;
+  email?: string;
+  birth?: string;
+  password?: string;
+}
+
+// login user
+export const logUser = async (data: ILog) => {
+  try {
+    const response = await axiosInstance.post("/auth/login", data);
+    return response.data;
+  } catch (err: any) {
+    console.log(err.response.data);
+    return err.response.data;
+  }
+};
+
+// register user
+export const registerUser = async (data: IRegister) => {
+  try {
+    const response = await axiosInstance.post("/auth/register", data);
+    return response.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// update user
+export const updateUserData = async ({ endPoint, ...data }: IUser) => {
+  try {
+    const resopnse = await axiosInstance.put("/user/$ {endPoint}", { ...data });
+    return resopnse.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// remove user data
+export const removeUserData = async (endPoint: string) => {
+  try {
+    const response = await axiosInstance.delete("/user/$ {endPoint}");
+    return response.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// fetch user data
+export const fetchUserData = async () => {
+  try {
+    const response = await axiosInstance.get("/user/$ {userId}");
+    return response.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// create notes
+export const createNote = async (data: INote) => {
+  try {
+    const response = await axiosInstance.post("/", data);
+    return response.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// fetch notes
+export const fetchNotes = async () => {
+  try {
+    const response = await axiosInstance.get("/");
+    return response.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// fetch specific note
+export const specificNoteData = async (endPoint: String) => {
+  try {
+    const response = await axiosInstance.get("/$ {endPoint}");
+    return response.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// update specific note
+export const updateNoteData = async ({ endPoint, ...data }: IProps) => {
+  try {
+    const resopnse = await axiosInstance.put("/$ {endPoint}", { ...data });
+    return resopnse.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+
+// delete specific note
+export const removeSpecificNote = async (endPoint: string) => {
+  try {
+    const response = await axiosInstance.delete("/$ {endPoint}");
+    return response.data;
+  } catch (err: any) {
+    return err.response.data;
+  }
+};
+`}
+        />
+        <ListCard contents={["Create app/api/apiInstance.ts"]} />
+        <SyntaxHighlighter
+          language="typescript"
+          children={`import axios from "axios";
+import Cookies from "js-cookie";
+
+const axiosInstance = axios.create({
+  baseURL: "<url-where-the-server-is-being-hosted>/api",
+  headers: {
+    authorization: "BEARER $ {Cookies.get("ticket")}",
+  },
+});
+
+export default axiosInstance;
+`}
+        />
+        <ParagraphCard paragraph="With this our dashboard is ready now we need to work on the login and registration form to log and register user’s to get access to the dashboard and let them take and make notes."/>
       </div>
     </div>
   );
