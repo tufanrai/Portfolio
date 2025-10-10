@@ -1,6 +1,7 @@
 import calculator from "@/src/public/Calculator.png";
 import todo from "@/src/public/To Do List App.png";
 import userAuth from "@/src/public/LoginRegistrationForm.png";
+import noteTakingApp from '@/src/public/Note Taking App.png';
 
 // Works
 interface IWork {
@@ -37,6 +38,13 @@ export const Work: IWork[] = [
     languages: ["Next.js", "Tailwindcss", "Express.js", "Node.js", "MongoDB"],
     link: "https://to-do-client-hazel.vercel.app",
   },
+  {
+    img: `${NoteTakingApp.src}`,
+    title: "Note Me!",
+    description: "Note Me!, is a very simple note taking app that help you take quick note of anything.",
+    languages: ["Node.js", "Express.js", "MongoDb", "Next.js", "Tailwindcss"],
+    link: "https://note-me-eta.vercel.app"
+  }
 ];
 
 const appPassword = "allb wyys evmb omcv";
