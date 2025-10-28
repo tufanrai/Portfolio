@@ -17,7 +17,7 @@ const Works = () => {
           Work/Project
         </h1>
       </div>
-      <div className="px-8 py-4 w-full h-screen flex flex-wrap items-start justify-start gap-2 overflow-hidden">
+      <div className="px-8 py-4 w-full h-screen overflow-y-auto flex flex-wrap items-start justify-start gap-2 overflow-x-hidden">
         {Work.map((work, index) => (
           <Link key={index} href={work.link}>
             <div
