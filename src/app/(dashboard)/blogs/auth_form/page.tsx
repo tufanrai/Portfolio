@@ -6,7 +6,6 @@ import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 const page = () => {
- 
   return (
     <div className="w-full h-screen overflow-x-hidden flex justify-center">
       <div className="max-w-[1280px] w-full h-screen px-6 py-8">
@@ -34,11 +33,7 @@ const page = () => {
           ]}
         />
         <br />
-        <ParagraphCard paragraph="Here is a small asmr tutorial on how to build login and registration page. From here you will be able to build the UI of the form and the only extra thing you will have to work on is to add the api connection part."/>
-        <br />
-        <div className="w-full flex items-center justify-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/5nI3cSiRSwQ?si=djbuE1JQjFhbUm-j" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-        </div>
+        <ParagraphCard paragraph="Here is a small asmr tutorial on how to build login and registration page. From here you will be able to build the UI of the form and the only extra thing you will have to work on is to add the api connection part." />
         <br />
         <Header headerType="sec" content="Setting up the Project" />
         <br />
@@ -104,16 +99,21 @@ npm i -D @types/express @types/bcryptjs @types/jsonwebtoken ts-node-dev
           />
         </div>
         <br />
-        <ListCard contents={["Create .env file on the roote directory ( server ) to store sensetive and important urls."]}/>
+        <ListCard
+          contents={[
+            "Create .env file on the roote directory ( server ) to store sensetive and important urls.",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-              <SyntaxHighlighter 
-                language="bash"
-                children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 touch .env
-              `}/>
+              `}
+          />
         </div>
-        <br/>
-        <ListCard contents={["Store all the sensetive urls on .env file"]}/>
+        <br />
+        <ListCard contents={["Store all the sensetive urls on .env file"]} />
         <div className="w-full px-2 md:px-8">
           <SyntaxHighlighter
             language="bash"
@@ -124,23 +124,37 @@ DB_URL = ''
 
 JWT_SECRET_KEY = "DoNotShare"
 JWT_EXPIRY_DATE = '30d'
-              `}/>
+              `}
+          />
         </div>
         <br />
-        <ListCard contents={["Inside server folder create a src folder and inside it create some essential folders along with a server file."]}/>
+        <ListCard
+          contents={[
+            "Inside server folder create a src folder and inside it create some essential folders along with a server file.",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-              <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 mkdir src && cd src
 touch server.ts
 mkdir config controller model router utils
-              `}/>
+              `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Server setup"/>
+        <Header headerType="sec" content="Server setup" />
         <br />
-        <ListCard contents={["Initialise app, connect the routes and database. ( src/server.ts )"]}/>
+        <ListCard
+          contents={[
+            "Initialise app, connect the routes and database. ( src/server.ts )",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
@@ -169,14 +183,21 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 
 app.listen(port, () => console.log('server started on port: 5001'));
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Database configuration"/>
+        <Header headerType="sec" content="Database configuration" />
         <br />
-        <ListCard contents={["connect your server with the database. ( src/config/dbConfig.ts )"]}/>
+        <ListCard
+          contents={[
+            "connect your server with the database. ( src/config/dbConfig.ts )",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import mongoose from 'mongoose';
 
 // function that connects server with the database. 
@@ -185,12 +206,15 @@ export const dbConfig = (uri: string) => {
 	.then(() => console.log('server connected to database successfuly'))
 	.catch(err => console.log(err));
 };
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["Create a user model. ( model/user.mode.ts )"]}/>
+        <ListCard contents={["Create a user model. ( model/user.mode.ts )"]} />
         <div className="w-full px-2 md:px-8">
-            <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import { Schema, model } from 'mongoose';
 
 const UserSchema = new Schema({
@@ -210,22 +234,36 @@ const UserSchema = new Schema({
 	
 	const User = model('users', UserSchema);
 	export default User;
-            `}/>
+            `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Helping components/Utils"/>
+        <Header headerType="sec" content="Helping components/Utils" />
         <br />
-        <ListCard contents={["Create helping components like asyncHandler, errorHandler, token generator and password hasher."]}/>
+        <ListCard
+          contents={[
+            "Create helping components like asyncHandler, errorHandler, token generator and password hasher.",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 cd utils 
 touch asyncHandler.ts errorHandler.ts jwt.utils.ts bcryptjs.utils.ts
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["Inside asyncHandler.ts file create async handler function"]}/>
+        <ListCard
+          contents={[
+            "Inside asyncHandler.ts file create async handler function",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 
 type Handler = (req: Request, res: Response, next: NextFunciton) => Promise<any>;
@@ -236,12 +274,19 @@ export const asyncHandler = (fun: Handler) : RequestHandler => {
 		Promise.resolve(fun(req,res,next)).catch(err => next(err));
 	};
 };
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["Create custom error handler file inside the file errorHandler.ts"]}/>
+        <ListCard
+          contents={[
+            "Create custom error handler file inside the file errorHandler.ts",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 class errorHandler extends Error {
 	statusCode : number;
 	status: 'success' | 'fail' | 'error';
@@ -257,12 +302,19 @@ class errorHandler extends Error {
 };
 
 export default errorHandler;
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["Create a token generator and verifiyer on the jwt.utils.ts file"]}/>
+        <ListCard
+          contents={[
+            "Create a token generator and verifiyer on the jwt.utils.ts file",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import jwt from 'jsonwebtoken';
 
 const jwtSecretKey = process.env.JWT_SECRET_KEY ?? 'Shhh'; // This is the secret key which is used for token generation and decoding of token
@@ -278,13 +330,24 @@ export const generateToken = (data: IPayload) => {
 export const verifyToken = (token: string) => {
 	return jwt.verify(token, jwtSecretKey) as jwt.JwtPayload;
 };
-          `}/>
+          `}
+          />
         </div>
-        <ParagraphCard paragraph={"“jsonwebtoken” is one of the package that is used to generate as it’s name says ‘JSON web token’. This token comes in hand when ever you login to a site, close the site and visit it again after few hours. The generated token when you first loged in will automatically logs in for you such that the second visit to site is direct to your dashaboard."} />
+        <ParagraphCard
+          paragraph={
+            "“jsonwebtoken” is one of the package that is used to generate as it’s name says ‘JSON web token’. This token comes in hand when ever you login to a site, close the site and visit it again after few hours. The generated token when you first loged in will automatically logs in for you such that the second visit to site is direct to your dashaboard."
+          }
+        />
         <br />
-        <ListCard contents={["create a password hasher and verifyier in bcryptjs.utils.ts file"]}/>
+        <ListCard
+          contents={[
+            "create a password hasher and verifyier in bcryptjs.utils.ts file",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import bcryptjs from 'bcryptjs';
 
 // hash password 
@@ -298,15 +361,22 @@ export const hashPassword = async (password: string) => {
 export const verifyPassword = ( password: string, hash: string ) => {
 	return bcryptjs.compare(password, hash); // returns a boolean value
 };
-          `}/>
+          `}
+          />
         </div>
-        <ParagraphCard paragraph="“bcryptjs” is another package which is basically used to hash any kind of sensitive datas ( password, contact info and many more ) of user before storing into a database. "/>
+        <ParagraphCard paragraph="“bcryptjs” is another package which is basically used to hash any kind of sensitive datas ( password, contact info and many more ) of user before storing into a database. " />
         <br />
-        <Header headerType="sec" content="Controllers"/>
+        <Header headerType="sec" content="Controllers" />
         <br />
-        <ListCard contents={["create a file auth.controller.ts in the controller folder"]}/>
+        <ListCard
+          contents={[
+            "create a file auth.controller.ts in the controller folder",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import { Request, Response } from 'express';
 import { asyncHandler } from '../utils/asyncHandler';
 import errorHandler from '../utils/errorHandler';
@@ -381,14 +451,19 @@ export const loginUser = asyncHandler( async (req: Request, res: Response) => {
 		accessTokne,
 	});
 };
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Router"/>
+        <Header headerType="sec" content="Router" />
         <br />
-        <ListCard contents={["Create auth.router.ts file to rout your controllers."]}/>
+        <ListCard
+          contents={["Create auth.router.ts file to rout your controllers."]}
+        />
         <div className="w-full px-2 md:px-8">
-            <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import { Router } from 'express';
 import { newRegister, loginUser } from '../controller/auth.controllers';
 
@@ -398,45 +473,70 @@ authRouter.post('/register', newRegister);
 authRouter.post('/login', loginUser);
 
 export default authRouter;
-              `}/>
+              `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Frontend work"/>
+        <Header headerType="sec" content="Frontend work" />
         <br />
-        <ListCard contents={["Go to client folder and initilise new next app"]}/>
+        <ListCard
+          contents={["Go to client folder and initilise new next app"]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 cd client && npx create-next-app@latest .
 // After this it will ask you questions answer them as per your requirenent if writing the code then just press enter and continue
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["install essential packages"]}/>
+        <ListCard contents={["install essential packages"]} />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 npm i react-hot-toast react-icons @tanstack/query react-hook-form @hookform/resolver yup axios
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["Create a folder named components inside app folder and again inside component folder create 3 folders (schema, interface and cards)"]}/>
+        <ListCard
+          contents={[
+            "Create a folder named components inside app folder and again inside component folder create 3 folders (schema, interface and cards)",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-            <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 cd app && mkdir components
 cd components && mkdir cards schema interface
-              `}/>
+              `}
+          />
         </div>
         <br />
-        <ListCard contents={["create two files inside cards ( LoginCard.tsx & RegisterCard.tsx)"]}/>
+        <ListCard
+          contents={[
+            "create two files inside cards ( LoginCard.tsx & RegisterCard.tsx)",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 cd cards && touch LoginCard.tsx RegisterCard.tsx
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Login card component"/>
+        <Header headerType="sec" content="Login card component" />
         <br />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 "use client";
 import Link from "next/link";
 import React from "react";
@@ -540,13 +640,16 @@ const LoginCard = () => {
 };
 
 export default LoginCard;
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Register card component"/>
+        <Header headerType="sec" content="Register card component" />
         <br />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 "use client";
 import React from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -665,14 +768,21 @@ const RegisterCard = () => {
 };
 
 export default RegisterCard;
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Schema"/>
+        <Header headerType="sec" content="Schema" />
         <br />
-        <ListCard contents={["Insied schema folder create a file named form.schema.ts, here we will define the schema of login and register form."]}/>
+        <ListCard
+          contents={[
+            "Insied schema folder create a file named form.schema.ts, here we will define the schema of login and register form.",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 imoprt * as yup from 'yup';
 
 // Login schema 
@@ -688,14 +798,21 @@ export const registerSchema = yup.object({
 	password: yup.string().required('please enter the password').min(8, 'your password must be atleast of 8 characters').matches(/\d+$/, 'your password must contain atleast one digit'),
 	c_password: yup.string().required('please re-enter the password').oneof([yup.ref('password')], 'password did not matched'),
 });
-            `}/>
+            `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Interface"/>
+        <Header headerType="sec" content="Interface" />
         <br />
-        <ListCard contents={["Inside the interface folder create a file form.interface.ts  where we will define the interface of the login and registration form."]}/>
+        <ListCard
+          contents={[
+            "Inside the interface folder create a file form.interface.ts  where we will define the interface of the login and registration form.",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 // login form interface 
 export interface ILogin {
 	email: string,
@@ -708,23 +825,29 @@ export interface IRegister {
 	email: string,
 	password: string,
 };
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Assemble them all"/>
+        <Header headerType="sec" content="Assemble them all" />
         <br />
-        <ParagraphCard paragraph="Finally after creating all of those components, go to app folder then create a folder named auth and again inside the auth folder create two folder login and register. "/>
+        <ParagraphCard paragraph="Finally after creating all of those components, go to app folder then create a folder named auth and again inside the auth folder create two folder login and register. " />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 cd app && mkdir auth
 cd auth && mkdir login register
-          `}/>
+          `}
+          />
         </div>
-        <ParagraphCard paragraph="Again create a file named page.tsx in both of the file."/>
+        <ParagraphCard paragraph="Again create a file named page.tsx in both of the file." />
         <br />
-        <ListCard contents={["../login/page.tsx"]}/>
+        <ListCard contents={["../login/page.tsx"]} />
         <div>
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import React from 'react';
 import LoginCard from '@/components/cards/LoginCard';
 
@@ -735,12 +858,15 @@ const page = () => {
 		</div>
 	);
 };
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["../register/page.tsx"]}/>
+        <ListCard contents={["../register/page.tsx"]} />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import React from 'react';
 import RegisterCard from '@/components/cards/RegisterCard';
 import page from '../../page';
@@ -752,24 +878,34 @@ const page = () => {
 		</div>
 	);
 };
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Backend Connection"/>
+        <Header headerType="sec" content="Backend Connection" />
         <br />
-        <ParagraphCard paragraph="Lastly create an api folder inside app folder and create a file named form.api.ts"/>
+        <ParagraphCard paragraph="Lastly create an api folder inside app folder and create a file named form.api.ts" />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="bash" children={`
+          <SyntaxHighlighter
+            language="bash"
+            children={`
 cd ../
 mkdir api 
 cd api && touch form.api.ts
 open form.api.ts
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <ListCard contents={["Create axios instance and connect frontend with backend."]}/>
+        <ListCard
+          contents={[
+            "Create axios instance and connect frontend with backend.",
+          ]}
+        />
         <div className="w-full px-2 md:px-8">
-          <SyntaxHighlighter language="typescript" children={`
+          <SyntaxHighlighter
+            language="typescript"
+            children={`
 import axios from 'axios';
 import { ILogin, IResigster } from '@/components/interface/form.interface';
 
@@ -798,12 +934,19 @@ export const RegisterUser = async (data: IRegister) => {
 		return err.message;
 	};
 };
-          `}/>
+          `}
+          />
         </div>
         <br />
-        <Header headerType="sec" content="Conclusion"/>
-        <ParagraphCard paragraph="With this you have successfully completed building production ready login/registration form and you also might have understood how all the social medias and other applications keep record of your accounts. Thank you for giving your valuable time to read my blog. After this if still you have some doubts regarding this project, your have certain part that you are still confused about then please feel free to contact me or mail me i’ll be explaining it clearly to you guys. "/>
-        <Link className="w-full font-thin text-md md:text-lg text-blue-500 underline" href={'https://login-registration-form-client-nu.vercel.app'}> click here to check the demo!</Link>
+        <Header headerType="sec" content="Conclusion" />
+        <ParagraphCard paragraph="With this you have successfully completed building production ready login/registration form and you also might have understood how all the social medias and other applications keep record of your accounts. Thank you for giving your valuable time to read my blog. After this if still you have some doubts regarding this project, your have certain part that you are still confused about then please feel free to contact me or mail me i’ll be explaining it clearly to you guys. " />
+        <Link
+          className="w-full font-thin text-md md:text-lg text-blue-500 underline"
+          href={"https://login-registration-form-client-nu.vercel.app"}
+        >
+          {" "}
+          click here to check the demo!
+        </Link>
       </div>
     </div>
   );
