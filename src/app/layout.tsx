@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portfolio | Tufan Rai",
   description:
-    "MERN stack web developer, website building, e-commerce website, web developers near me, web developers, full stack web developers, full stack web developer portfolio, website, mern stack, full stack developer from Nepal",
+    "MERN stack web developer, website building, e-commerce website, web developers near me, web developers, full stack web developers, full stack web developer portfolio, website, mern stack, full stack developer from Nepal, web developer freelancer",
 };
 
 export default function RootLayout({
@@ -30,9 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider>
-          {children}
-        </QueryProvider>
+        <QueryProvider>{children}</QueryProvider>
         <Analytics />
       </body>
     </html>

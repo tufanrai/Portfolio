@@ -18,11 +18,8 @@ const HeroPage = () => {
     if (typeof window !== "undefined") {
       localStorage.setItem("id", id.toString());
     }
-    console.log(id);
     router.replace(`/blogs/${id.toString()}`);
   };
-
-  console.log(Work, Work.length);
 
   const Day = useContext(DayContext);
   return (
